@@ -21,7 +21,28 @@
     }
     .adlam-display{
       font-family: "ADLaM Display", serif;
-    }
+    } 
+    .hamburger-menu{
+    width: 42px;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    right: 48px;
+    margin-top: 24px;
+  }
+  .hamburger-menu::before, .hamburger-menu::after{
+    content:"";
+    position: absolute;
+    width: 42px;
+    height: 6px;
+    background-color: black;
+  }
+  .hamburger-menu::before{
+    top: -16px;
+  }
+  .hamburger-menu::after{
+    top: 16px;
+  }
   </style>
   <!-- fontawesome cdn -->
   <script src="https://kit.fontawesome.com/7dcd80a878.js" crossorigin="anonymous">
@@ -30,7 +51,7 @@
 </head>
 <body>
   <header>
-    <div class="hamburger-menu"></div>
+    <div class="md:hidden hamburger-menu"></div>
     <nav class="sora flex justify-between items-center bg-[#FFF9F4] px-12 lg:px-32 lg:py-6">
       <div class="flex items-center gap-1">
         <!-- logo style -->
@@ -40,13 +61,13 @@
       </div>
       <!-- menu bar style -->
       <div>
-        <ul class="flex text-xl font-normal gap-4 text-[#111111]">
+        <ul class="hidden md:flex md:text-xl font-normal gap-4 md:text-[#111111]">
           <li>Find a pet</li>
           <li>Breeds</li>
           <li>Contact us</li>
         </ul>
       </div>
-      <div class="flex items-center gap-3">
+      <div class="items-center hidden gap-3 md:flex">
         <!-- bell style -->
         <div>
           <i class="text-2xl fa-regular fa-bell"></i>
@@ -61,17 +82,20 @@
         <div><button class="text-xl font-normal px-8 py-2 bg-[#FFDC26] border-none  rounded-lg">Register</button></div>       
       </div>
     </nav>
-
+    <br>
+    <hr class="border-blue-700 border-1 md:hidden">
   </header>
   <main>
-    <section class="px-32 mb-32 h-screen bg-contain bg-no-repeat  bg-center bg-[url('./c1-assets/cat-big.png')]">
+    <!-- banner section -->
+    <section class="px-4 md:px-32 md:mb-32 h-screen bg-contain bg-no-repeat bg-center bg-[url('./c1-assets/cat-big.png')]">
       <div>
-        <h2 class="mt-24 text-5xl adlam-display">Pamper Your Pet,<br> Because They Deserve <br> the Bes</h2>
+        <h2 class="text-3xl md:text-5xl md:mt-24 adlam-display">Pamper Your Pet,<br> Because They Deserve <br> the Bes</h2>
         <p class="pt-4 pb-6 sora opacity-70">Discover a world of treats, toys, and essentials handpicked for <br> your furry friends. Shop now and make tails wag with joy! </p>
         <button class="sora text-xl font-normal px-8 py-2 bg-[#FFDC26] border-none  rounded-lg">Find a pet</button>
       </div>
     </section>
-    <section class="px-32 mx-auto">
+    <!-- browse by category section -->
+    <section class="px-8 mx-auto md:px-32">
       <div>
         <h3 class="mb-12 text-4xl">Browse By Categories</h3>
       </div>
@@ -134,10 +158,10 @@
       </div>      
     </section>
     <!-- trending pet section -->
-    <section class="flex bg-[#FFF9F4] px-32 py-24 gap-7">
+    <section class="flex flex-col flex-wrap md:flex-row bg-[#FFF9F4] px-8 md:px-32 md:py-24 gap-7">
       <div class="">
         <div>
-          <h3 class="mb-12 text-4xl adlam-display">Trending Pet Products</h3>
+          <h3 class="mb-12 text-3xl md:text-4xl adlam-display">Trending Pet Products</h3>
         </div>
         <!-- T-shirts for dogs -->
         <div class="p-6 w-96 h-96 rounded-xl bg-[#F9DF8A]">
@@ -147,13 +171,13 @@
           <img class="relative -top-32 left-32" src="./c1-assets/cute-pet-small.png"> 
         </div>       
       </div>
-      <div class="grid grid-cols-3 gap-8 py-24">
+      <div class="grid grid-cols-2 py-24 md:gap-8 lg:grid-cols-3">
       <!-- small card-1 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
-        <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/dog-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -167,11 +191,11 @@
         </div>        
       </div>
       <!-- small card-2 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
-        <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/fish-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -185,11 +209,11 @@
         </div>        
       </div>
       <!-- small card-3 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
-        <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg md:w-56 md:h-42 w-44">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/bird-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -203,11 +227,11 @@
         </div>        
       </div>
       <!-- small card-4 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
         <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/rabbit-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -221,11 +245,11 @@
         </div>        
       </div>
       <!-- small card-5 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
         <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/pet-couch.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -239,11 +263,11 @@
         </div>        
       </div>
       <!-- small card-6 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
         <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/fish-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -257,11 +281,11 @@
         </div>        
       </div>
       <!-- small card-7 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
         <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/bird-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -275,11 +299,11 @@
         </div>        
       </div>
       <!-- small card-8 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
-        <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/rabbit-cartoon.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
@@ -293,11 +317,29 @@
         </div>        
       </div>
       <!-- small card-9 -->
-      <div class="flex justify-start w-56 p-3 bg-white border-2 border-gray-200 rounded-lg h-42">
-        <div class="flex ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+      <div class="flex justify-start h-24 p-3 mb-4 bg-white border-2 border-gray-200 rounded-lg w-44 md:w-56 md:h-42">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
           <img src="./c1-assets/pet-couch.png" alt="">
         </div>
-        <div class="ml-5 sora">
+        <div class="md:ml-5 sora">
+          <div class="flex gap-2">
+            <div><i class="fa-solid fa-star text-amber-500"></i></div>
+            <div class="text-medium">4.5</div>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold">Pet Bed</h4>
+          </div>
+          <div>
+            <p>$39.99</p>
+          </div>
+        </div>        
+      </div>
+      <!-- small card-10 -->
+      <div class="flex justify-start h-24 p-3 bg-white border-2 border-gray-200 rounded-lg w-44 mb-4m d:hidden">
+        <div class="flex md:ml-5 items-center justify-center w-16 h-16 bg-[#FFF9F4] rounded-2xl">
+          <img src="./c1-assets/rabbit-cartoon.png" alt="">
+        </div>
+        <div class="md:ml-5 sora">
           <div class="flex gap-2">
             <div><i class="fa-solid fa-star text-amber-500"></i></div>
             <div class="text-medium">4.5</div>
